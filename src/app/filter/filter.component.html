@@ -1,0 +1,18 @@
+<div class="filter-container">
+  <form class="categories-form">
+    <label for="categories">Kategoriler</label>
+    <select
+      class="dropdown"
+      id="categories"
+      name="categories"
+      [(ngModel)]="selectedCategory"
+      (change)="onCategoryChange()"
+    >
+      <option value="all" name="all">Tümü ({{ all }})</option>
+      <option value="TV" name="TV">TV ( {{ TV }} )</option>
+      <option value="phone" name="phone">Telefon ( {{ phone }} )</option>
+      <option value="tablet" name="tablet">Tablet ( {{ tablet }} )</option>
+      <option value="watch" name="watch">Saat ( {{ watch }} )</option>
+    </select>
+  </form>
+</div>

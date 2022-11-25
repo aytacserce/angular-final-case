@@ -1,0 +1,39 @@
+.product-container {
+  margin: 20px auto;
+  padding: 10px 10px;
+  background-image: url("../../assets/main-background.png");
+  display: flex;
+}
+.image-container {
+  padding: 10px;
+  height: 70vh;
+}
+img {
+  height: 100%;
+}
+.product-content {
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  font-size: 5rem;
+  font-weight: 700;
+}
+.product-details {
+  display: flex;
+  margin: 20px 0px;
+  text-align: center;
+}
+b {
+  font-size: 2rem;
+  padding: 0px 10px;
+  font-weight: 400;
+}
+h2 {
+  font-weight: 600;
+  padding: 0px 10px;
+}
+p {
+  font-size: 2rem;
+  padding: 10px;
+}

@@ -1,0 +1,27 @@
+<div class="product-container">
+  <div class="image-container">
+    <img src="{{ product.image }}" width="560" />
+  </div>
+  <div class="product-content">
+    <div>
+      <h1>{{ product.name }}</h1>
+    </div>
+    <div class="product-details">
+      <div>
+        <b>Marka: {{ product.brand }}</b>
+      </div>
+      <div>
+        <b>Model: {{ product.model }}</b>
+      </div>
+      <div>
+        <b>Renk: {{ product.color }}</b>
+      </div>
+    </div>
+    <div>
+      <h2>Fiyat: {{ product.price }}TL</h2>
+    </div>
+    <div>
+      <p>{{ product.description }}</p>
+    </div>
+  </div>
+</div>

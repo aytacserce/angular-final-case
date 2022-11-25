@@ -1,0 +1,41 @@
+<div class="content-area">
+  <div class="header">
+    <h1>Sign Up / Sign In</h1>
+    <hr />
+  </div>
+  <div class="container">
+    <div class="form-area">
+      <h3>I am a New User</h3>
+      <form #signupForm="ngForm" (ngSubmit)="onUserSignup(signupForm.value)">
+        <label>Name</label>
+        <input type="text" name="uName" ngModel />
+
+        <label>Surname</label>
+        <input type="text" name="uSurname" ngModel />
+
+        <label>E-Mail</label>
+        <input type="email" name="uEmail" ngModel />
+
+        <label>Password</label>
+        <input type="password" name="uPassword" ngModel />
+
+        <input type="submit" value="Kaydol" />
+      </form>
+    </div>
+    <div class="form-area">
+      <h3>I alreade Have an Account</h3>
+      <form
+        #loginForm="ngForm"
+        (ngSubmit)="onUserLogin(loginForm.value); loginChecked()"
+      >
+        <label>E-Mail</label>
+        <input type="email" name="checkEmail" ngModel />
+
+        <label>Password</label>
+        <input type="password" name="checkPassword" ngModel />
+
+        <input type="submit" value="Giriş" (click)="redirectHome()" />
+      </form>
+    </div>
+  </div>
+</div>

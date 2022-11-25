@@ -1,0 +1,13 @@
+<div class="search-container">
+  <div class="search-area">
+    <label for="search">Arama</label>
+    <input
+      class="input-area"
+      type="text"
+      name="search"
+      id="search"
+      [(ngModel)]="searchValue"
+      (input)="onSearchTextChange()"
+    />
+  </div>
+</div>

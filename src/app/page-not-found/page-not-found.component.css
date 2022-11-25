@@ -1,0 +1,10 @@
+.container404 {
+  background-image: url("../../assets/main-background.png");
+  font-size: 30px;
+  text-align: center;
+  height: 60vh;
+}
+
+h1 {
+  margin: 100px 0px;
+}

@@ -1,0 +1,25 @@
+.search-container {
+  display: inline-block;
+  width: 50%;
+  background-image: linear-gradient(to right, white, #6c6c6c);
+  color: black;
+  margin-top: 15px;
+}
+
+.search-area {
+  display: block;
+  float: right;
+  height: 50px;
+  margin: 20px;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.input-area {
+  font-size: 20px;
+  margin: 0px 15px;
+  border-radius: 5px;
+  transform: translateY(-2px);
+  padding: 6px;
+}

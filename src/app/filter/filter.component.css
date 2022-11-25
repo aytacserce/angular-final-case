@@ -1,0 +1,28 @@
+.filter-container {
+  display: inline-block;
+  width: 50%;
+  background-image: linear-gradient(to right, #d60000e6, white);
+  color: white;
+  transform: translateY(-35px);
+}
+
+.categories-form {
+  height: 50px;
+  margin: 20px;
+  padding: 10px;
+  display: inline-block;
+}
+
+label {
+  font-size: 30px;
+  margin-left: 20px;
+  font-weight: 700;
+}
+
+.dropdown {
+  font-size: 20px;
+  margin: 0px 15px;
+  border-radius: 5px;
+  transform: translateY(-2px);
+  padding: 6px;
+}

@@ -1,0 +1,42 @@
+<app-filter
+  [all]="getTotalProducts()"
+  [TV]="getTVs()"
+  [phone]="getphones()"
+  [tablet]="gettablets()"
+  [watch]="getwatches()"
+  (categoryChanged)="onDropdownSelectionChange($event)"
+></app-filter>
+<app-search (searchTextChange)="onSearchTextEnter($event)"></app-search>
+<div class="products-page">
+  <ng-container *ngFor="let p of products">
+    <ng-container
+      *ngIf="searchText === '' || p.name.toLowerCase().includes(searchText)"
+    >
+      <div *ngIf="dropdownSelection === 'all' || dropdownSelection === p.type">
+        <div class="product-container">
+          <div class="image-container">
+            <img [src]="p.image" alt="product picture" />
+          </div>
+          <div>
+            <div class="detailContainer">
+              <div class="details" style="color: #d60000e6; font-weight: 800">
+                {{ p.name }}
+              </div>
+              <div class="details"><b>Renk: </b>{{ p.color }}</div>
+              <div class="details"><b>Fiyat: </b>{{ p.price }} TL</div>
+            </div>
+          </div>
+          <div class="options">
+            <button
+              class="btn btn-details"
+              routerLink="/ProductDetails/{{ p.id }}"
+            >
+              Ürün Detay
+            </button>
+            <button class="btn btn-buy">Sepete Ekle</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>
