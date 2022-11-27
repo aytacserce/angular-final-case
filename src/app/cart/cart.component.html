@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="product-display-area">
+    <table id="products">
+      <tr class="table-head">
+        <th>Ürün Görseli</th>
+        <th>Ürün İsim</th>
+        <th>Ürün Markası</th>
+        <th>Ürün Fiyatı</th>
+        <th></th>
+      </tr>
+      <tr *ngIf="allProducts.length < 1">
+        <td colspan="5">Sepetinizde ürün bulunmamaktadır.</td>
+      </tr>
+      <tr>
+        <td colspan="5"></td>
+      </tr>
+      <tr *ngFor="let product of allProducts; index as i">
+        <td><img [src]="product.image" /></td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.brand }}</td>
+        <td>{{ product.price }} TL</td>
+        <td>
+          <button
+            class="btn-delete"
+            (click)="onProductDelete(product.id)"
+            (mousemove)="onFetchProducts()"
+          >
+            Ürünü Sil
+          </button>
+        </td>
+      </tr>
+      <tr *ngIf="allProducts.length > 0">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="action-btn-container">
+          <button
+            class="btn-fetch"
+            (click)="onCartComplete()"
+            (mousemove)="onFetchProducts()"
+          >
+            Alışverişi Tamamla
+          </button>
+        </td>
+      </tr>
+    </table>
+    <hr />
+  </div>
+</div>

@@ -6,18 +6,60 @@
   <div class="container">
     <div class="form-area">
       <h3>I am a New User</h3>
-      <form #signupForm="ngForm" (ngSubmit)="onUserSignup(signupForm.value)">
-        <label>Name</label>
-        <input type="text" name="uName" ngModel />
+      <form
+        [formGroup]="signupForm"
+        (ngSubmit)="onUserSignup(signupForm.value)"
+      >
+        <label>İsim</label>
+        <input type="text" name="uName" formControlName="uName" />
+        <div>
+          <span
+            style="color: red; font-size: 14px"
+            *ngIf="
+              !signupForm.get('uName').valid && signupForm.get('uName').touched
+            "
+            >Bu alan boş bırakılamaz.</span
+          >
+        </div>
 
-        <label>Surname</label>
-        <input type="text" name="uSurname" ngModel />
+        <label>Soyisim</label>
+        <input type="text" name="uSurname" formControlName="uSurname" />
+        <div>
+          <span
+            style="color: red; font-size: 14px"
+            *ngIf="
+              !signupForm.get('uSurname').valid &&
+              signupForm.get('uSurname').touched
+            "
+            >Bu alan boş bırakılamaz.</span
+          >
+        </div>
 
-        <label>E-Mail</label>
-        <input type="email" name="uEmail" ngModel />
+        <label>E-Posta</label>
+        <input type="email" name="uEmail" formControlName="uEmail" />
+        <div>
+          <span
+            style="color: red; font-size: 14px"
+            *ngIf="
+              !signupForm.get('uEmail').valid &&
+              signupForm.get('uEmail').touched
+            "
+            >Geçerli bir e-posta adresi giriniz.</span
+          >
+        </div>
 
-        <label>Password</label>
-        <input type="password" name="uPassword" ngModel />
+        <label>Şifre</label>
+        <input type="password" name="uPassword" formControlName="uPassword" />
+        <div>
+          <span
+            style="color: red; font-size: 14px"
+            *ngIf="
+              !signupForm.get('uPassword').valid &&
+              signupForm.get('uPassword').touched
+            "
+            >Bu alan boş bırakılamaz.</span
+          >
+        </div>
 
         <input type="submit" value="Kaydol" />
       </form>

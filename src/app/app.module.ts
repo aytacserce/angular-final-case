@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,8 @@ import { ProductGuardService } from './Services/product-guard.service';
 import { AuthService } from './Services/auth.service';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './cart/cart.component';
+import { AboutComponent } from './about/about.component';
 
 const appRoute: Routes = [
   { path: '', component: HomeComponent },
@@ -27,8 +29,8 @@ const appRoute: Routes = [
   },
   { path: 'ProductDetails/:id', component: ProductDetailsComponent },
   { path: 'Login', component: LoginComponent },
-  //{ path: 'About', component: AboutComponent },
-  //{ path: 'Cart', component: CartComponent }
+  { path: 'About', component: AboutComponent },
+  { path: 'Cart', component: CartComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -43,6 +45,8 @@ const appRoute: Routes = [
     SearchComponent,
     LoginComponent,
     ProductDetailsComponent,
+    CartComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,7 @@ const appRoute: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoute),
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [ProductGuardService, AuthService, ProductsComponent],
   bootstrap: [AppComponent],

@@ -12,7 +12,12 @@
       <li><a class="main-nav-link" routerLink="About">Hakkımızda</a></li>
       <li><a class="main-nav-link" routerLink="Products">Ürünler</a></li>
       <li>
-        <a class="main-nav-link nav-cta btnLogin" routerLink="Login">Login</a>
+        <a
+          class="main-nav-link nav-cta btnLogin"
+          routerLink="Login"
+          *ngIf="!loggedIn"
+          >Login</a
+        >
       </li>
       <!-- <li>
         <a

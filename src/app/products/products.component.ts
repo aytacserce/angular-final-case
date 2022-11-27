@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AddToCartService } from '../Services/AddToCartService';
 
 @Component({
   selector: 'app-products',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  constructor() {}
+  constructor(private AddToCartService: AddToCartService) {}
 
   ngOnInit(): void {}
 
@@ -200,5 +201,20 @@ export class ProductsComponent implements OnInit {
   onSearchTextEnter(searchValue: string) {
     this.searchText = searchValue;
     console.log(this.searchText);
+  }
+
+  AddToCart(product: {
+    id?: number;
+    name?: string;
+    type?: string;
+    brand?: string;
+    model?: string;
+    info?: string;
+    description?: string;
+    price?: string;
+    color?: string;
+    image?: string;
+  }) {
+    this.AddToCartService.AddToCart(product);
   }
 }

@@ -1,0 +1,15 @@
+div {
+  width: 80%;
+  margin: 10px auto;
+  background-image: url("../../assets/main-background.png");
+}
+
+h1 {
+  font-size: 8rem;
+  text-align: center;
+}
+
+p {
+  font-size: 3rem;
+  text-align: center;
+}

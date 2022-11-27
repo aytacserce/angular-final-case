@@ -4,6 +4,7 @@ import { AuthService } from '../Services/auth.service';
 import { map } from 'rxjs/operators';
 import { User } from '../model/user';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  signupForm: FormGroup;
   allUsers: User[] = [];
 
   constructor(
@@ -20,6 +22,12 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.signupForm = new FormGroup({
+      uName: new FormControl(null, Validators.required),
+      uSurname: new FormControl(null, Validators.required),
+      uEmail: new FormControl(null, [Validators.required, Validators.email]),
+      uPassword: new FormControl(null, Validators.required),
+    });
     this.fetchUsers();
   }
 
@@ -31,7 +39,7 @@ export class LoginComponent implements OnInit {
   }) {
     this.http
       .post(
-        'https://product-list-e6cbb-default-rtdb.firebaseio.com/users.json',
+        'https://user-list-42fad-default-rtdb.firebaseio.com/users.json',
         users
       )
       .subscribe((response) => {
@@ -41,7 +49,7 @@ export class LoginComponent implements OnInit {
 
   private fetchUsers() {
     this.http
-      .get('https://product-list-e6cbb-default-rtdb.firebaseio.com/users.json')
+      .get('https://user-list-42fad-default-rtdb.firebaseio.com/users.json')
       .pipe(
         map((response) => {
           const users: any[] = [];
